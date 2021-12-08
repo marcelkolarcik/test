@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -9,7 +9,15 @@ import {useLocation} from "react-router-dom";
 export default function MainNavigation() {
     const [clickedLink, setClickedLink] = useState('');
     const [colorChange, setColorChange] = useState(false);
-    const changeNavbarColor = () => {
+
+    const setActiveNavLinkOnScroll = useCallback(() => {
+        ['about', 'service', 'portfolio', 'contact', 'home'].map(comp => {
+            return isInViewport(comp) ? setClickedLink('#' + comp) : ''
+        })
+    }, []);
+
+
+    const changeNavbarColor = useCallback(() => {
         if (window.scrollY >= 100) {
             setColorChange(true);
         } else {
@@ -17,7 +25,7 @@ export default function MainNavigation() {
         }
 
         setActiveNavLinkOnScroll();
-    };
+    }, [setActiveNavLinkOnScroll]);
 
     function isInViewport(element) {
         let box = document.querySelector('.' + element);
@@ -30,23 +38,21 @@ export default function MainNavigation() {
         );
     }
 
-    const setActiveNavLinkOnScroll = () => {
-
-        ['about', 'service', 'portfolio', 'contact', 'home'].map(comp => {
-            return isInViewport(comp) ? setClickedLink('#' + comp) : ''
-        })
-    }
 
     const {hash} = useLocation()
 
     useEffect(() => {
 
-        window.addEventListener('scroll', changeNavbarColor);
         setClickedLink(hash)
+
+    }, [hash])
+
+    useEffect(() => {
+        window.addEventListener('scroll', changeNavbarColor);
         return () => {
             window.removeEventListener('scroll', () => changeNavbarColor);
         };
-    }, [hash])
+    }, [changeNavbarColor])
 
 
     return (
@@ -90,7 +96,6 @@ export default function MainNavigation() {
                                 classes.nav_link_active + ' mx-3 nav-link fw-bold' :
                                 classes.nav_link_hover + ' mx-3 nav-link fw-bold'}
                             href="#contact">Contact</Nav.Link>
-
 
 
                     </Nav>

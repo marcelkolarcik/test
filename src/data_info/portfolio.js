@@ -1,4 +1,3 @@
-import square from '../images/square.png'
 import ifymarket from '../images/ifymarket.png'
 import airbnb from '../images/airbnb.png'
 import globtopus from '../images/globtopus.png'
@@ -37,8 +36,8 @@ export const portfolio_details = [
         technologies: 'Python, Flask, MongoDB, Javascript, HTML, CSS, jQuery',
         image: globtopus,
         features: ['Project from CodeInstitute',
-        'Attempt to find out how does the world feel...;-)',
-        'Currently under re-development']
+            'Attempt to find out how does the world feel...;-)',
+            'Currently under re-development']
     },
 
 ]

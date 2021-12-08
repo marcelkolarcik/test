@@ -10,7 +10,7 @@ export default function PortfolioItem(props) {
                 <img src={item.image} className="card-img" alt="..."/>
 
                 <div className="card-img-overlay p-0 m-0 ">
-                    <a target={'_blank'} href={item.url} className={'text-decoration-none'}>
+                    <a rel="noreferrer" target={'_blank'} href={item.url} className={'text-decoration-none'}>
                         <div
                             className={classes.card_content +
                             ' p-2  d-flex justify-content-center align-items-center'}>

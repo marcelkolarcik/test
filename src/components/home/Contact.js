@@ -14,7 +14,7 @@ export default function Contact() {
                      build something amazing<span className={classes.blue}>.</span>
             </p>
                 <div className={'text-center'}>
-                    <a target={'_blank'} className={'btn btn-sm btn-dark'}
+                    <a rel="noreferrer" target={'_blank'} className={'btn btn-sm btn-dark'}
                        href="https://www.linkedin.com/in/marcel-kolarcik/">LinkedIn</a>
                     <a className={'btn btn-sm btn-dark'} href="mailto:marcelkolarcik@gmail.com">Mail</a>
                 </div>
