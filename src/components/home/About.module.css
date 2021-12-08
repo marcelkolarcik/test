@@ -1,0 +1,47 @@
+
+.text_color {
+    color: #656262;
+
+}
+
+.dark_bgr {
+    background-color: #151518;
+}
+
+.lighter_bgr {
+    background-color: #212529;
+}
+
+.about_bgr_dark {
+    background-color: #151518;
+    min-height: 100vh;
+
+
+}
+
+.about_bgr_light {
+    background-color: #212529;
+    min-height: 100vh;
+}
+
+.heading {
+    padding-top: 50px;
+}
+.blue{
+    color: #0d6efd;
+}
+.card_content {
+    opacity: 0;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.card_content:hover {
+    cursor:pointer;
+    opacity: 0.9;
+    border-radius: 5px;
+    background: linear-gradient(
+            130deg, #0d6efd, #001840 66%);
+    transform: scale(1.05);
+
+}

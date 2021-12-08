@@ -1,0 +1,13 @@
+.welcome_hero {
+    background-image: linear-gradient(to top,
+    rgba(1, 35, 47, 0.1),
+    rgba(1, 35, 47, 0.1),
+     rgba(1, 35, 47, 0.1),
+     rgba(1, 35, 47, 0.1),
+    rgba(21, 21, 24, 0.99)),
+    url("../../images/hero.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+
+}
